@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <title>INRAD – Radioterapia</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <link rel="stylesheet" type='text/css' href="static/css/bootstrap.css">
+    </head>
+
+<body>
+<!--*************EMPIEZA EL CONTENIDO*************-->
+<style>
+    /*PALETTE COLORS
+    *Logo Colors
+        fluorecent-green: #38d82c
+        pale-rose:        #de65ab
+        pale-blue:        #66dadd
+        pale-yellow:      #fff27b
+    *OtherColors
+        button-green:     #16a89f
+        fluorecent-rose:  #d922da
+        dark-grey:        #54595f
+        grey:             #5c6167
+    */
+     
+    a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+    .greenHeader
+    {
+    
+        background:#137871;
+        font-family:'Roboto';
+        color: #fff;
+        font-weight: 400; 
+        font-size: 25px;
+        text-align: center;
+        padding:10px;
+        
+    }
+
+    .Footer{
+        background:#5c6167;
+    }
+
+/*MAIN BUTTONS SETTINGS*/
+    .button {
+        display: inline-flex;
+        align-items: center;
+        background: #16a89f;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+        border-radius: 5px;
+        height: 45px;
+        width: 275px;
+        padding: 0 30px;
+        color: #fff;
+        font-family: 'Roboto';
+        text-decoration: none;
+        transition: 200ms;
+        will-change: transform;
+    }
+    
+    .button:hover{
+        color: #fff;
+        background:#66dadd;
+        transform: translate3d(0, -2px, 0);
+        
+    }
+    .button:hover:active {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+    transform: translate3d(0, 1px, 0);
+  }
+
+
+    
+  .LogoHeader{
+    background:#efefef;
+    color: #8f8f8f;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1) inset;
+    text-decoration: none;
+    color: currentColor;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .item{
+    text-decoration: none;
+        color: #8f8f8f;
+        font-size: 24px;
+        font-weight: 900;
+        font-family: 'Roboto';
+        transition: 300ms;
+  }
+  .item:hover{
+      color:#38d82c;      
+  }
+  @media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+.list-item-mobile{
+    color: #fff;
+    text-decoration:none;
+    font-family: 'Roboto';
+    font-size: 20px;
+    padding: 5px;
+    width:100%;
+    background: #137871;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+  }
+ 
+  .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+
+}
+</style>
+
+<div class="greenHeader container-fluid">
+    <div class="row">
+        
+    <div class="col-12 col-md-5">
+        <a href="tel:+56222264771" class="button pulse">
+            <img src="static/img/fono2.png" style="height: 30px;width: 30px;">
+            <strong style='padding-left: 5px;'>2 2226 4771</strong>
+        </a>
+    </div>
+    <div class="col-2  col-md-2">
+    </div>
+    <div class="col-12 col-md-5">    
+        <a class="button pulse" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468                               2.37A7 7 0 0 0 8 1z"></path>
+            </svg>
+            <strong style='padding-left: 5px;'>Portal Paciente</strong>
+        </a>
+    </div>
+    
+    </div>
+</div>
+
+<div class="LogoHeader container-fluid">
+    <div class="MenuBar row  align-items-center clearfix">
+    
+        <div class="col-12   col-sm-12 col-md-12 col-lg-4 "><a href='#'><img src="static/img/logotipo.png" class="LogoImgFile" ></a></div>
+        <div class="col-md-3 col-lg-2 d-none d-md-block mx-auto list-item"><a href='#' class='item'>Nosotros</a></div>
+        <div class="col-md-3 col-lg-2 d-none d-md-block mx-auto list-item"><a href='#' class='item'>Tratamientos</a></div>
+        <div class="col-md-3 col-lg-2 d-none d-md-block mx-auto list-item"><a href='#' class='item'>Pacientes</a></div>
+        <div class="col-md-3 col-lg-2 d-none d-md-block mx-auto list-item"><a href='#' class='item'>Contacto</a></div>
+    </div>
+    
+<div class="DivBar" style="background:#16a89f;padding: 10px;"> </div>
+
+ 
+<div class="MovilBar row d-md-none " >
+    <nav class="navbar navbar-expand-lg" style="background:#16a89f;">
+        <div class="container-fluid mx-auto" style="padding-left: 0px;padding-right: 0px;">
+        <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" style='padding-bottom: 20px;'>
+            <span class="navbar-toggler-icon " style='color:white;'><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+                    <li class="list-item-mobile"><a href='https://getbootstrap.com/docs/5.0/components/dropdowns/' class='item-mobile'>Nosotros</a></li>
+                    <li class="list-item-mobile"><a href='#' class='item-mobile'>Tratamientos</a></li>
+                    <li class="list-item-mobile"><a href='#' class='item-mobile'>Pacientes</a></li>
+                    <li class="list-item-mobile"><a href='#' class='item-mobile'>Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--SE GENERA EL CONTENIDO EN OTRAS VISTAS HTML-->
+<img src="https://lorempixel.com/350/150/transport"/>
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit id dui diam, fermentum aliquam ante eleifend cum nec ad ullamcorper bibendum justo, duis platea libero malesuada lectus mollis magnis magna ac. Pellentesque interdum dui etiam metus leo orci massa felis placerat, morbi vivamus euismod auctor ad est fringilla viverra urna, quam phasellus natoque ullamcorper in luctus eleifend imperdiet. Magna nam mi non semper orci est ligula ullamcorper taciti, lacus cum magnis himenaeos mattis viverra odio luctus imperdiet facilisi, phasellus malesuada libero facilisis molestie diam urna fusce.</p><p>Sociosqu netus nullam commodo porttitor condimentum donec curabitur, vulputate tellus tortor massa nulla sagittis ad lacus, at tempor imperdiet ac penatibus fusce. Natoque ante mus sociis quam potenti cum fermentum bibendum suscipit cursus primis, euismod curabitur est montes arcu molestie nulla cubilia dictumst facilisis purus, vel sed lobortis ultrices lacus orci phasellus conubia inceptos tristique. Quisque aptent purus platea rutrum justo habitasse maecenas nascetur vivamus, natoque condimentum ullamcorper augue nisi posuere scelerisque a, dictumst faucibus imperdiet ridiculus porttitor sed mollis malesuada.</p>
+{% block content %}
+{% endblock %}
+
+<div class="DivBar" style="background:#16a89f;padding: 10px;"> </div>
+
+<div class="Footer container-fluid">
+    <div class="row">
+        <div class="col-md-3"><a href='#'><img src="static/img/logotipobw.png" class="LogoImgFile" ></a></div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--*************TERMINA EL CONTENIDO*************-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+
