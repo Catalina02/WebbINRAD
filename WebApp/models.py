@@ -8,7 +8,7 @@ class Usuario (models.Model):
     apellido_materno=models.CharField(max_length=100,null=False, blank=False)
     rut=models.IntegerField(null=False, blank=False, unique=True)
     dv=models.IntegerField(null=False, blank=False)
-    correo=models.EmailField()
+    correo=models.EmailField(null=True)
     fecha_nacimiento=models.DateField()
     
     img_perfil=models.ImageField(upload_to='Usuarios', default='blank-profile-picture-973460_640.png')
@@ -21,10 +21,11 @@ opciones_contacto=[
     [2,'Sugerencia'],
     [3,'Felicitaciones']
     ]
-class Contacto(models.Model):
+class Mensaje(models.Model):
     nombre=models.CharField(max_length=100)
-    correo=models.EmailField()
+    correo_contacto=models.EmailField(null=False, blank=False)
     tipo_contacto=models.IntegerField(choices=opciones_contacto)
+    mensaje=models.TextField()
 
     def __str__(self):
         return self.nombre
