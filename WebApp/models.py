@@ -16,10 +16,11 @@ class Usuario (models.Model):
         return self.rut
 
 opciones_contacto=[
-    [0,'Consulta'],
-    [1,'Reclamo'],
-    [2,'Sugerencia'],
-    [3,'Felicitaciones']
+    [0,'RADIOTERAPIA'],
+    [1,'RADIOCIRUGÍA'],
+    [2,'BRAQUITERAPIA'],
+    [3,'FOTODINAMIA'],
+    [4,'OTROS']
     ]
 class Mensaje(models.Model):
     nombre=models.CharField(max_length=100)

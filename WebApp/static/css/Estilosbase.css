@@ -10,8 +10,6 @@
         dark-grey:        #54595f
         grey:             #5c6167
     */
-     
- 
     .greenHeader
     {
     
@@ -35,6 +33,16 @@
         text-align: center;
         padding:30px;
     }
+
+    h1{
+        font-family:'Roboto';
+        color: #8f8f8f;
+        font-weight: 900; 
+        font-size: 25px;
+        text-align: center;
+        padding:30px;
+    }
+
     .RRSS{
         margin: 5px;
     }
@@ -86,20 +94,33 @@
         text-decoration: none;
         transition: 200ms;
         will-change: transform;
+        outline: none;
+        margin: 5px;
+        
     }
     
     .button:hover{
         color: #fff;
         background:#66dadd;
         transform: translate3d(0, -2px, 0);
+        outline: none;
+        border: none;
         
     }
     .button:hover:active {
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
     transform: translate3d(0, 1px, 0);
+    outline: none;
+    border: none;
+    border: 0;
   }
 
-
+  .cancel_button{
+    background:#b10e26;
+  }
+  .cancel_button:hover{
+    background:#580612;    
+}
     
   .LogoHeader{
     background:#efefef;
@@ -122,7 +143,7 @@
         transition: 300ms;
   }
   .item:hover{
-      color:#38d82c;      
+      color:#16a89f;      
   }
   @media only screen and (max-width: 768px) {
   /* For mobile phones: */
@@ -153,9 +174,79 @@
         outline: 0;
         box-shadow: 0 0 0 0;
     }
+    .boton_formulario{
+        width: 100%;
+    }
 }
 
-    a:hover, a:focus, a:active {
-      text-decoration: none;
-      color: inherit;
- }
+a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+
+    
+}
+/*General Body*/
+body{
+  background:#efefef;
+}
+
+.contenedor
+{
+    margin: 10px;
+}
+
+/*Inicio*/
+/*Header*/
+
+.home_header {
+        background-image: url('backgroundimg.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        background-color: #FFF;
+        text-align: center;
+        color: #000;
+        border-radius: 0 0 85% 85% / 30%;
+     
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1) inset;
+}
+.home_header .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+    background-image: linear-gradient( 135deg, #085550a6 10%, #16a89f6b 100%);
+	border-radius: 0 0 85% 85% / 30%;
+}
+
+.home_title {
+	font-family: 'Roboto';
+	font-size: 80px;
+	margin-bottom: 30px;
+    color: #fff;
+    text-align: left;
+}
+
+.home_p{
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+    text-align: left;
+}
+
+/*Contactanos*/
+iframe{
+    padding: 0px;
+    outline: 5px;
+    border-color: #137871;
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    margin-top: 45px;
+}
+
+.boton_formulario{
+    width: 100%;
+}

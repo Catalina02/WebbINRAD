@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import  MensajeForm
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'inicio.html')
 
 def contacto(request):
     data={
