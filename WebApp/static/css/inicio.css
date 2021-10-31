@@ -1,0 +1,39 @@
+/*Inicio*/
+/*Header*/
+
+.home_header {
+    background-image: url('backgroundimg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-color: #FFF;
+    text-align: center;
+    color: #000;
+    border-radius: 0 0 85% 85% / 30%;
+ 
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1) inset;
+}
+.home_header .overlay{
+width: 100%;
+height: 100%;
+padding: 50px;
+color: #FFF;
+text-shadow: 1px 1px 1px #333;
+background-image: linear-gradient( 135deg, #085550a6 10%, #16a89f6b 100%);
+border-radius: 0 0 85% 85% / 30%;
+}
+
+.home_title {
+font-family: 'Roboto';
+font-size: 80px;
+margin-bottom: 30px;
+color: #fff;
+text-align: left;
+}
+
+.home_p{
+font-family: 'Open Sans', sans-serif;
+margin-bottom: 30px;
+text-align: left;
+}
