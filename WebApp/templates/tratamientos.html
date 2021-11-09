@@ -2,7 +2,257 @@
 {% extends 'base.html' %}
 {%load static%}
 {% block contenido%}
+<style>
+    /*OVERLAY*/
+.inicio-header {
+	background: url("{% static 'img/background4.jpg' %}");
+	text-align: center;
+    background-size: 100% ;
+	width: 100%;
+	height: 100%;
+    background-position:  center center;
+
+    background-repeat: no-repeat;
+    background-color: #16a89f;
+	background-size: cover;
+	background-attachment: scroll;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+}
+
+.inicio-header .inicio-overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #0a524dd5 10%, #66d9dd88 100%);}
+
+.inicio-title{
+    font-family: 'Roboto', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+@media only screen and (max-width: 768px){
+    .inicio-title{
+    font-family: 'Roboto', cursive;
+	font-size: 50px;
+    text-align: center;
+	margin-bottom: 30px;
+    }
+}
+@media only screen and (max-width: 380px){
+    .inicio-title{
+    font-family: 'Roboto', cursive;
+	font-size: 40px;
+    text-align: center;
+	margin-bottom: 30px;
+    }
+}
+
+.inicio-titlebody {
+	font-family: 'Roboto';
+
+    font-size: 40px;
+}
+
+
+.inicio-title{
+    font-family: 'Roboto', cursive;
+	font-size: 60px;
+	margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+@media only screen and (max-width: 768px){
+    .inicio-title{
+    font-family: 'Roboto', cursive;
+	font-size: 50px;
+    text-align: center;
+	margin-bottom: 30px;
+    }
+}
+@media only screen and (max-width: 380px){
+    .inicio-title{
+    font-family: 'Roboto', cursive;
+	font-size: 40px;
+    text-align: center;
+	margin-bottom: 30px;
+    }
+}
+.bajada{
+    font-size: 30px;
+}
+/*FIN OVERLAY*/
+
+.agendar{
+    font-size:30px;
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    margin: 20px;
+}
+.texto{
+    font-family: "Arial", Sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #5c6167;
+}
+hr.divisor {
+    border: 0;
+    padding: 2px;
+    margin: 20px;
+    height: 2px;
+    width: 100%;
+    background-image: linear-gradient(to right, #efefef, #16a89f, #efefef);
+    }
+    hr{
+        margin: 5px;
+        color:#16a89f ;
+    }
+    .boxcontent{
+        margin: 100px;
+    }
+.boxtexto{
+    margin: 30px;
+}
+
+.titleitem{
+    font-family: 'Roboto', cursive;
+	font-size: 25px;
+    text-align: center;
+    font-weight: 900;
+    color:#16a89f ;
+}
+.textitem{
+    font-family: 'Roboto', cursive;
+	font-size: 20px;
+
+    text-align: center;
+    font-weight: 500;
+    color:#5c6167;
+}
+.img{
+    text-align: center;
+    margin: 10px;
+    border-color: #137871;
+    border-top-width: 5px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    width: 200px;
+    }
+.inicio-button{
+
+text-align: center;
+margin:20px;
+height: 50px;
+width: 220px;
+font-size: 20px;
+}
+.center{text-align: center;}
+
+.persona{margin-bottom: 100px;}
+.dudas{
+        text-align: center;
+        background:#137871;
+        color: #FFF;
+        padding: 10px;
+        font-size: 35px;
+    font-weight: 600;
+    font-family:'Roboto';
+    color:#5c6167;
+    }
+</style>
 <body>
-    <h1>TRATAMIENTOS</h1>
+    <header class="inicio-header ">
+        <div class="inicio-overlay">
+            <div class="row">
+                <div class="inicio-title col-12 align-items-center clearfix">Tratamientos</div>
+                <div class="inicio-titlebody">Estas en buenas Manos</div>
+                <div class="inicio-titlebody bajada">Tratamientos con tecnología de punta</div>
+               
+            </div>
+        </div>
+    </header>
+
+    <div class="row align-items-center clearfix "><a href="/" class=' agendar button pulse justify-content-center mx-auto'><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar-check-fill" viewBox="0 0 16 16">
+        <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+      </svg> <strong>AGENDA TU HORA</strong></a></div>
+
+      <hr class="divisor">
+
+    <div class="content row clearfix mx-auto" style="padding-left: 150px;padding-right: 150px;">
+        <div class="col-12 inicio-title mx-auto" style="color:#5c6167;">Nuestros tratamientos</div>
+        <div class="col-12 texto mx-auto boxtexto">Más cerca que nunca, te apoyamos con tratamientos que implican tecnología de punta y profesionales realmente comprometidos con la vida.</div>
+    </div>
+    
+<hr class="divisor">
+
+<div class="boxcontent">
+    <div class="row clearfix">
+        
+        <div class="col-12 col-md-12 col-lg-4  mx-auto persona">
+            <div class="titleitem mx-auto">RADIOTERAPIA CONFORMADA 3D </div>
+            <div class="img mx-auto"><img  src=" {% static 'img/radioterap.jpg' %}" width="200" height="200"></div>
+            <div class="textitem mx-auto" style="padding-left: 90px;padding-right: 90px;">Consiste en la utilizar radiación ionizante para destruir células cancerosas y reducir el tamaño de los tumores.</div>
+            <div class="center mx-auto">
+                <a class="button pulse inicio-button" href="{% url 'terapias' %}" ><strong>Más Información</strong> </a>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-12 col-lg-4  mx-auto persona">
+            <div class="titleitem mx-auto">IMRT</div>
+            <div class="img mx-auto"><img  src=" {% static 'img/imrt.jpg' %}" width="200" height="200"></div>
+            <div class="textitem mx-auto" style="padding-left: 90px;padding-right: 90px;">La Radioterapia de Intensidad Modulada (IMRT) permite dar altas dosis de radiación al tumor y bajas dosis a órganos sanos.</div>
+            <div class="center mx-auto">
+                <a class="button pulse inicio-button" href="{% url 'terapias' %}" ><strong>Más Información</strong> </a>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-4  mx-auto persona">
+            <div class="titleitem mx-auto">RADIOCIRUGÍA GAMMA KNIFE</div>
+            <div class="img mx-auto"><img  src=" {% static 'img/radiocir.jpg' %}" width="200" height="200"></div>
+            <div class="textitem mx-auto" style="padding-left: 90px;padding-right: 90px;">Disponible a través de convenio directo con el Centro Gamma Knife de Santiago ubicado en el Hospital Militar. </div>
+            <div class="center mx-auto" >
+                <a class="button pulse inicio-button" href="{% url 'terapias' %}" ><strong>Más Información</strong> </a>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-4  mx-auto persona">
+            <div class="titleitem mx-auto">BRAQUITERAPIA DE ALTA TASA</div>
+            <div class="img mx-auto"><img  src=" {% static 'img/braquialta.jpg' %}" width="200" height="200"></div>
+            <div class="textitem mx-auto" style="padding-left: 90px;padding-right: 90px;">Permite aplicar dosis altas de radiación de forma precisa a corta distancia, cerca del área a tratar. </div>
+            <div class="center mx-auto" style="padding-top: 30px;">
+                <a class="button pulse inicio-button" href="{% url 'terapias' %}" ><strong>Más Información</strong> </a>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-4  mx-auto persona">
+            <div class="titleitem mx-auto">BRAQUITERAPIA DE BAJA TASA</div>
+            <div class="img mx-auto"><img  src=" {% static 'img/braquibaja.png' %}" width="200" height="200"></div>
+            <div class="textitem mx-auto" style="padding-left: 90px;padding-right: 90px;">Consiste en la colocación de pequeñas semillas radiactivas directamente en el interior del tumor. </div>
+            <div class=" center mx-auto" style="padding-top: 30px;">
+                <a class="button pulse inicio-button" href="{% url 'terapias' %}" ><strong>Más Información</strong> </a>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-12 col-lg-4  mx-auto persona">
+            <div class="titleitem mx-auto">FOTODINAMIA</div>
+            <div class="img mx-auto"><img  src=" {% static 'img/fotodin.jpg' %}" width="200" height="200"></div>
+            <div class="textitem mx-auto" style="padding-left: 90px;padding-right: 90px;">Es una terapia superficial ultraselectiva. utilizado para el tratamiento de enfermedades de la piel. </div>
+            <div class="center mx-auto"  >
+                <a class="button pulse inicio-button" href="{% url 'terapias' %}" ><strong>Más Información</strong> </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 </body>
 {% endblock%}

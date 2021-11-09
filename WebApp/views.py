@@ -23,6 +23,9 @@ def nosotros(request):
  
 def tratamientos(request):
     return render(request,'tratamientos.html')
+
+def terapias(request):
+    return render(request,'terapias.html')
  
 def pacientes(request):
     return render(request,'pacientes.html')
