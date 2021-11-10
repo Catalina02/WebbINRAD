@@ -11,7 +11,10 @@
         grey:             #5c6167
     */
 
-
+    :root {
+        --darkgreen: #137871;
+        --green: ##16a89f;
+      }
     
     .greenHeader
     {

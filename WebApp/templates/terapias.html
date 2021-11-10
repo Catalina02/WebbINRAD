@@ -4,111 +4,7 @@
 {% block contenido%}
 
 <style>
-        /*OVERLAY*/
-.inicio-header {
-	background: url("{% static 'img/background5.jpg' %}");
-	text-align: center;
-    background-size: 100% ;
-	width: 100%;
-	height: 100%;
-    background-position:  center center;
-
-    background-repeat: no-repeat;
-    background-color: #16a89f;
-	background-size: cover;
-	background-attachment: scroll;
-	position: relative;
-	overflow: hidden;
-	border-radius: 0 0 85% 85% / 30%;
-}
-.inicio-header .inicio-overlay{
-	width: 100%;
-	height: 100%;
-	padding: 50px;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient( 135deg, #0a524dd5 10%, #66d9dd88 100%);}
-
-.inicio-title{
-    font-family: 'Roboto', cursive;
-	font-size: 80px;
-	margin-bottom: 30px;
-    text-align: center;
-    font-weight: 500;
-}
-@media only screen and (max-width: 768px){
-    .inicio-title{
-    font-family: 'Roboto', cursive;
-	font-size: 50px;
-    text-align: center;
-	margin-bottom: 30px;
-    }
-}
-@media only screen and (max-width: 380px){
-    .inicio-title{
-    font-family: 'Roboto', cursive;
-	font-size: 40px;
-    text-align: center;
-	margin-bottom: 30px;
-    }
-}
-.inicio-titlebody {
-	font-family: 'Roboto';
-
-    font-size: 40px;
-}
-.inicio-title{
-    font-family: 'Roboto', cursive;
-	font-size: 60px;
-	margin-bottom: 30px;
-    text-align: center;
-    font-weight: 500;
-}
-@media only screen and (max-width: 768px){
-    .inicio-title{
-    font-family: 'Roboto', cursive;
-	font-size: 50px;
-    text-align: center;
-	margin-bottom: 30px;
-    }
-}
-@media only screen and (max-width: 380px){
-    .inicio-title{
-    font-family: 'Roboto', cursive;
-	font-size: 40px;
-    text-align: center;
-	margin-bottom: 30px;
-    }
-}
-.bajada{
-    font-size: 30px;
-}
-
-/*FIN OVERLAY*/
-hr.divisor {
-    border: 0;
-    padding: 2px;
-
-    height: 2px;
-    width: 100%;
-    background-image: linear-gradient(to right, #efefef, #16a89f, #efefef);
-    }
-    hr{
-        margin: 5px;
-        color:#16a89f ;
-    }
-.greenbar{
-    background:#16a89f;
-    padding:3px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 25px;
-    color: white;
-    font-family: 'Roboto';
-    font-weight: 700;
-
-}
+/*exclusivo terpaias*/
 .boxcontent
 {
     margin-left: 150px;
@@ -121,13 +17,12 @@ hr.divisor {
         margin-right: 80px;
     }
     .infoimg{
-    background-image: url("{% static 'img/background2.jpg' %}");
-    background-position: center center;
-    background-size: cover;
-    margin: 0px;
- 
-    text-align: center;  
-}
+        background-image: url("{% static 'img/background2.jpg' %}");
+        background-position: center center;
+        background-size: cover;
+        margin: 0px;
+        text-align: center;  
+    }
 }
 @media only screen and (max-width: 550px){
     .boxcontent
@@ -140,29 +35,8 @@ hr.divisor {
         margin-right: 0px;
     }
 }
-.infotitulo{
-    font-weight: 600;
-    font-size: 20px;
-    font-family: 'Roboto';
-    color: #137871;
-}
-.infotexto{
-    list-style: disc;
-    font-size: 18px;
-    font-weight: 500;
-    text-align: justify;
-    color:#5c6167;
-    padding: 10px;
-    padding-right: 50px;
-    padding-left: 50px;
 
-}
-li{
-    padding: 10px;
-}
-.lista{
-    padding:0px;
-}
+
 @media only screen and (max-width: 550px){
     .boxcontent
     {
@@ -187,7 +61,7 @@ li{
 }
 
 .infocontent{
-    border-color: #137871;
+    border-color: var(--darkgreen);
     border-top-width: 5px;
     border-top-style: solid;
     border-bottom-style: solid;
@@ -202,11 +76,10 @@ img{
 .imagen{
     text-align:center;
 }
-
 </style>
 
 <body>
-    <header class="inicio-header ">
+    <header class="inicio-header "style="background-image: url('{% static 'img/background5.jpg' %}');">
         <div class="inicio-overlay">
             <div class="row">
                 <div class="inicio-title col-12 align-items-center clearfix">INFORMACIÓN DE NUESTROS </div>             
