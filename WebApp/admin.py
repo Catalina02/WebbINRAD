@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Mensaje, Usuario,Mensaje
+from .models import Mensaje, Paciente,Mensaje,Medico
 
 # Register your models here.
 
@@ -12,5 +12,6 @@ class UsuarioAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(Usuario, UsuarioAdmin)
+admin.site.register(Paciente, UsuarioAdmin)
+admin.site.register(Medico)
 admin.site.register(Mensaje)

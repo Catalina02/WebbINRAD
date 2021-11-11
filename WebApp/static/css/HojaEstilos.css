@@ -22,6 +22,10 @@
         --red:#8f0c1f;
         --darkred:#580612;
         --shadow:#333;
+        --light:#0cf3e4;
+        /*overlay*/
+        --primary:#0a524dd5;
+        --secondary:#66d9dd88;
       }
     
     /***********BASE HTML**********************/
@@ -212,7 +216,7 @@ hr.accessory {
     margin: 5px;
     height: 2px;
     width: 100%;
-    background-image: linear-gradient(to right, var(--darkgrey), #0cf3e4, var(--darkgrey));
+    background-image: linear-gradient(to right, var(--darkgrey), var(--ligth), var(--darkgrey));
 }
 /**************OVERLAY**********************/
 .inicio-header {
@@ -235,7 +239,7 @@ hr.accessory {
 	padding: 50px;
 	color: var(--white);
 	text-shadow: 1px 1px 1px #333;
-    background-image: linear-gradient( 135deg, #0a524dd5 10%, #66d9dd88 100%);
+    background-image: linear-gradient( 135deg, var(--primary) 10%, var(--secondary) 100%);
 }
 /*titulo overlay*/
 .inicio-title{
@@ -360,6 +364,7 @@ iframe{
           text-decoration:none;
           font-family: 'Roboto', sans-serif;
           font-size: 25px;
+          text-align: center;
           padding: 5px;
           width:100%;
           background: #137871;

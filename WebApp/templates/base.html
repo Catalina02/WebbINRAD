@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>INRAD – Radioterapia</title>
         <meta charset="UTF-8">
@@ -31,6 +31,8 @@
         <div class="col-2  col-md-2">
         </div>
         <div class="col-12 col-md-5">    
+            
+            
             <a class="button pulse" href="{% url 'login' %}" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
@@ -38,6 +40,8 @@
                 </svg>
                 <strong style='padding-left: 5px;'>Portal Paciente</strong>
             </a>
+
+            
         </div>
         
         </div>
@@ -53,11 +57,11 @@
             <div class="col-md-3 col-lg-2 d-none d-md-block mx-auto list-item"><a href="{% url 'contacto' %}" class='item'>Contacto</a></div>
         </div>
         
-        <div class="DivBar d-none d-md-block" style="background:#16a89f;padding: 10px;"> </div>
+        <div class="DivBar d-none d-md-block" style="background:var(--green);padding: 10px;"> </div>
 
         
         <div class="MovilBar row d-md-none " >
-            <nav class="navbar navbar-expand-lg" style="background:#16a89f;">
+            <nav class="navbar navbar-expand-lg" style="background:var(--green);">
                 <div class="container-fluid mx-auto" style="padding-left: 0px;padding-right: 0px;">
                 <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" style='padding-bottom: 20px;'>
                     <span class="navbar-toggler-icon " style='color:white;'><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -85,8 +89,8 @@
 </div>
 
 <div class="dudas align-items-center mx-auto">
-    <div class="item-inicio-texto" style="color: #FFF;">¿Tienes dudas?</div>
-    <div class="item-inicio-texto" style='color:#FFF'>Llámanos Al</div>
+    <div class="item-inicio-texto" style="color: var(--white);">¿Tienes dudas?</div>
+    <div class="item-inicio-texto" style='color:var(--white)'>Llámanos Al</div>
     <a href="tel:+56222264771" class="button pulse">
         <img src=" {% static 'img/fono2.png' %}" style="height: 30px;width: 30px;">
         <strong style='padding-left: 5px; text-align: center; font-size: 30px;'>2 2226 4771</strong>
@@ -96,7 +100,7 @@
 
 <!--*********************FOOOTER**********************************-->
 <footer>
-    <div class="DivBar" style="background:#16a89f;padding: 10px;"> </div>
+    <div class="DivBar" style="background:var(--green);padding: 10px;"> </div>
     <div class="Footer container-fluid">
         <div class="row align-items-start">
             <div class="col-12   col-sm-12 col-md-12 col-lg-4 ">
