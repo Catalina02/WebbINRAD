@@ -56,6 +56,10 @@ CRISPY_TEMPLATE_PACK='bootstrap4'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SILENCED_SYSTEM_CHECKS = ['security.W019']
 
+
+AUTH_USER_MODEL = 'WebApp.User'
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
