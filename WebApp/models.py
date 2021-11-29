@@ -1,54 +1,54 @@
+from django.contrib.auth.base_user import BaseUserManager
 from django.db import models
 from django.db.models.deletion import CASCADE
 
-from django.utils import timezone
-
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
 # Create your models here.
 
 
-class User(AbstractUser):
-      DOCTOR = 1
-      NURSE = 2
-      SURGEN =3
-      
-      ROLE_CHOICES = (
-          (DOCTOR, 'Doctor'),
-          (NURSE, 'Nurse'),
-          (SURGEN, 'Surgen'),
-      )
-      role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, blank=True, null=True)
-      # You can create Role model separately and add ManyToMany if user has more than one role
-    
+class UsuarioManager(BaseUserManager):
+    def create_user(self,email,rut,dv,password=None):
+        if not email:
+            raise ValueError('Debe Indicar un Email')
+        
+        usuario=self.model(rut=rut,email=self.normalize_email(email))
+        usuario.set_password(password)
+        usuario.save()
+        return usuario
 
+    def create_superuser(self,email,rut,dv,password=None):
+        usuario=self.create_user(email,rut,dv)
+        usuario.usuario_admin=True
+        usuario.save()
+        return usuario
 
+class Usuario(AbstractBaseUser):
+    email = models.EmailField('Correo Electronico',unique=True)
+    nombre=models.CharField('Nombre',max_length=255,null=False)
+    apellido_paterno=models.CharField('Apellido Paterno',max_length=255)
+    apellido_materno=models.CharField('Apellido Materno',max_length=255)
+    rut=models.IntegerField(null=False,unique=True)
+    #id_student = models.CharField(primary_key=True, max_length=10, validators=[RegexValidator(r'^\d{1,10}$')])
+    dv=models.CharField(max_length=1,null=False)
+    foto_perfil=models.ImageField('Foto de Perfil',upload_to='Usuarios/',null=True,default='blank-profile-picture-973460_640.png')
+    usuario_activo=models.BooleanField(default=True)
+    usuario_admin=models.BooleanField(default=False)
+    objects=UsuarioManager()
+    USERNAME_FIELD='rut'
+    REQUIRED_FIELDS=['dv','email']
 
-class Profile(models.Model):
-    
-    name=models.CharField(max_length=50)
-    def __str__(self):
-        return self.name
-
-
-class Paciente (models.Model):
-    rut=models.IntegerField(null=False, blank=False, unique=True)
-    dv=models.IntegerField(null=False, blank=False)
-    nombre = models.CharField(max_length=100,null=False, blank=False)
-    apellido_paterno=models.CharField(max_length=100,null=False, blank=False)
-    apellido_materno=models.CharField(max_length=100,null=False, blank=False)
-    correo=models.EmailField(null=True)
-    fecha_nacimiento=models.DateField()
     def __int__(self):
-        return self.rut
-    
-class Medico (models.Model):
-    rut=models.IntegerField(null=False, blank=False, unique=True)
-    dv=models.IntegerField(null=False, blank=False)
-    img_perfil=models.ImageField(upload_to='Usuarios', default='blank-profile-picture-973460_640.png')
-    def __int__(self):
-        return self.rut
+        return {self.rut}
 
-#***************CONTACTO ****************************************
+    def has_perm(self,perm,obj=None):
+        return True
+    
+    def has_module_perms(self,app_label):
+        return True
+
+    
+
+#******CONTACTO ****************************************
 
 opciones_contacto=[
     [0,'RADIOTERAPIA'],
