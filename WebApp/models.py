@@ -64,9 +64,12 @@ opciones_contacto=[
     ]
 class Mensaje(models.Model):
     nombre=models.CharField(max_length=100)
+    telefono_contacto=PhoneNumberField()
     correo_contacto=models.EmailField(null=False, blank=False)
     tipo_contacto=models.IntegerField(choices=opciones_contacto)
     mensaje=models.TextField()
+    paciente_contactado=models.BooleanField(null=False,default=False)
+    fecha_contacto=models.DateField(null=True)
   
 
     def __str__(self):

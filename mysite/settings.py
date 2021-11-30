@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'colorfield',
     'crispy_forms',
     'phonenumber_field',
+
 ]
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
@@ -131,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
