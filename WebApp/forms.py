@@ -6,4 +6,6 @@ class MensajeForm(forms.ModelForm):
         #obtiene tipos de datos desde el modelo definido
         model=Mensaje
         #fields=['nombre','correo_contacto','tipo_contacto','mensaje']
-        fields='__all__'
+        fields='nombre','telefono_contacto','correo_contacto','tipo_contacto','mensaje','fecha_contacto'
+        exclude = ['fecha_contacto']
+        
