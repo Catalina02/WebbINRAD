@@ -6,6 +6,8 @@ from itertools import cycle
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
 # Create your models here.
 
+#no olviadar
+# id_student = models.CharField(primary_key=True, max_length=10, validators=[RegexValidator(r'^\d{1,10}$')])
 
 class UsuarioManager(BaseUserManager):
     def create_user(self,email,rut,dv,password=None):
@@ -25,17 +27,26 @@ class UsuarioManager(BaseUserManager):
         return usuario
 
 class Usuario(AbstractBaseUser):
-    email = models.EmailField('Correo Electronico',unique=True)
-    nombre=models.CharField('Nombre',max_length=255,null=False)
-    apellido_paterno=models.CharField('Apellido Paterno',max_length=255)
-    apellido_materno=models.CharField('Apellido Materno',max_length=255)
     rut=models.IntegerField(null=False, blank=False, unique=True)
-    #id_student = models.CharField(primary_key=True, max_length=10, validators=[RegexValidator(r'^\d{1,10}$')])
     dv=models.CharField(max_length=1,null=False)
+    
+    nombre=models.CharField('Nombre',max_length=100,null=False)
+    apellido_paterno=models.CharField('Apellido Paterno',max_length=100)
+    apellido_materno=models.CharField('Apellido Materno',max_length=100)
+    
+    email = models.EmailField('Correo Electronico',unique=True)
     telefono_contacto=PhoneNumberField(null=False, blank=False)
+    telefono_contacto_2=PhoneNumberField(null=True, blank=True,default='+56900000000')
+    fecha_nacimiento=models.DateField(null=True)
+    
+    prevision=models.CharField('Prevision',max_length=50,null=False)
+    domicilio=models.CharField('Prevision',max_length=255,null=False)
+
     foto_perfil=models.ImageField('Foto de Perfil',upload_to='Usuarios/',null=True,default='blank-profile-picture-973460_640.png')
+
     usuario_activo=models.BooleanField(default=True)
     usuario_admin=models.BooleanField(default=False)
+    
     objects=UsuarioManager()
     USERNAME_FIELD='rut'
     REQUIRED_FIELDS=['dv','email']

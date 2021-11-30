@@ -14,11 +14,11 @@ marcar_contacto.short_description = 'Marcar Usuarios que ya han sido Contactados
 # Register your models here.
 
 class UsuarioAdmin(admin.ModelAdmin):
-    list_display=['rut','dv','nombre','apellido_paterno',]
-    search_fields=['rut','nombre']
+    list_display=['rut','dv','nombre','apellido_paterno','apellido_materno','email','telefono_contacto','prevision','usuario_activo']
+    search_fields=['nombre','telefono_contacto','email','apellido_paterno','apellido_materno','rut']
     #list_filter=[] #filtros de caracteristicas
     #list_editable=[''] #para poder editar el valor desde el listado 
-    #list_per_page=10#cantidad de registros por pagina
+    list_per_page=50#cantidad de registros por pagina
 class ContactoAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display=['nombre','telefono_contacto','correo_contacto','tipo_contacto','mensaje','paciente_contactado','fecha_contacto']
     list_filter=['tipo_contacto','paciente_contactado','fecha_contacto']
