@@ -2,7 +2,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.db import models
 from django.db.models.deletion import CASCADE
 from phonenumber_field.modelfields import PhoneNumberField
-
+from itertools import cycle
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
 # Create your models here.
 
@@ -15,6 +15,7 @@ class UsuarioManager(BaseUserManager):
         usuario=self.model(rut=rut,email=self.normalize_email(email))
         usuario.set_password(password)
         usuario.save()
+            
         return usuario
 
     def create_superuser(self,email,rut,dv,password):
