@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Mensaje, Usuario#, Paciente,Mensaje,Medico,Profile,User
 
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 
 
 
@@ -17,7 +19,7 @@ class UsuarioAdmin(admin.ModelAdmin):
     #list_filter=[] #filtros de caracteristicas
     #list_editable=[''] #para poder editar el valor desde el listado 
     #list_per_page=10#cantidad de registros por pagina
-class ContactoAdmin(admin.ModelAdmin):
+class ContactoAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display=['nombre','telefono_contacto','correo_contacto','tipo_contacto','mensaje','paciente_contactado','fecha_contacto']
     list_filter=['tipo_contacto','paciente_contactado','fecha_contacto']
     search_fields=['nombre','telefono_contacto','correo_contacto','tipo_contacto']

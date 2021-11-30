@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'phonenumber_field',
     'sweetify',
+    'import_export',
 
 ]
 
