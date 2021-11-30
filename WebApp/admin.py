@@ -1,9 +1,7 @@
 from django.contrib import admin
-from .models import Mensaje#, Paciente,Mensaje,Medico,Profile,User
+from .models import Mensaje, Usuario#, Paciente,Mensaje,Medico,Profile,User
 
 # Register your models here.
-
-
 
 
 
@@ -11,4 +9,4 @@ from .models import Mensaje#, Paciente,Mensaje,Medico,Profile,User
 #admin.site.register(Medico)
 #admin.site.register(Profile)
 #admin.site.register(Mensaje)
-#admin.site.register(User)
+admin.site.register(Usuario)

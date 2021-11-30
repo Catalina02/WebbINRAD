@@ -1,6 +1,7 @@
 from django.contrib.auth.base_user import BaseUserManager
 from django.db import models
 from django.db.models.deletion import CASCADE
+from phonenumber_field.modelfields import PhoneNumberField
 
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
 # Create your models here.
@@ -16,8 +17,8 @@ class UsuarioManager(BaseUserManager):
         usuario.save()
         return usuario
 
-    def create_superuser(self,email,rut,dv,password=None):
-        usuario=self.create_user(email,rut,dv)
+    def create_superuser(self,email,rut,dv,password):
+        usuario=self.create_user(email,rut=rut,dv=dv,password=password)
         usuario.usuario_admin=True
         usuario.save()
         return usuario
@@ -27,9 +28,10 @@ class Usuario(AbstractBaseUser):
     nombre=models.CharField('Nombre',max_length=255,null=False)
     apellido_paterno=models.CharField('Apellido Paterno',max_length=255)
     apellido_materno=models.CharField('Apellido Materno',max_length=255)
-    rut=models.IntegerField(null=False,unique=True)
+    rut=models.IntegerField(null=False, blank=False, unique=True)
     #id_student = models.CharField(primary_key=True, max_length=10, validators=[RegexValidator(r'^\d{1,10}$')])
     dv=models.CharField(max_length=1,null=False)
+    telefono_contacto=PhoneNumberField(null=False, blank=False)
     foto_perfil=models.ImageField('Foto de Perfil',upload_to='Usuarios/',null=True,default='blank-profile-picture-973460_640.png')
     usuario_activo=models.BooleanField(default=True)
     usuario_admin=models.BooleanField(default=False)
@@ -37,15 +39,17 @@ class Usuario(AbstractBaseUser):
     USERNAME_FIELD='rut'
     REQUIRED_FIELDS=['dv','email']
 
-    def __int__(self):
-        return {self.rut}
+    def __str__(self):
+        return str(self.rut)
 
     def has_perm(self,perm,obj=None):
         return True
     
     def has_module_perms(self,app_label):
         return True
-
+    @property
+    def is_staff(self):
+        return self.usuario_admin
     
 
 #******CONTACTO ****************************************
