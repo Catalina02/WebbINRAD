@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'WebApp',
+    'Users',
     'colorfield',
     'crispy_forms',
     'phonenumber_field',
@@ -61,7 +62,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 SILENCED_SYSTEM_CHECKS = ['security.W019']
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
-AUTH_USER_MODEL = 'WebApp.Usuario'
+AUTH_USER_MODEL = 'Users.Usuario'
 
 
 MIDDLEWARE = [

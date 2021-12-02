@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class WebappConfig(AppConfig):
+class UsersConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'WebApp'
-    verbose_name='Portal Web'
+    name = 'Users'
+    verbose_name='Gestion de Usuarios'
