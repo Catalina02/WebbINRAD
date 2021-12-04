@@ -3,6 +3,7 @@ from .forms import  MensajeForm
 from django.contrib import messages
 import sweetify
 from datetime import datetime
+
 def home(request):
     return render(request, 'inicio.html')
 
@@ -34,10 +35,4 @@ def terapias(request):
  
 def pacientes(request):
     return render(request,'pacientes.html')
- 
-def login(request):
-    return render(request,'login.html')
- 
-def registro(request):
-    return render(request,'registro.html')
  

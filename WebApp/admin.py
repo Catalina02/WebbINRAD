@@ -22,9 +22,6 @@ class ContactoAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_per_page=50
 
     actions = [marcar_contacto]
-    #resource_class=MensajeResource
 
-#admin.site.register(Paciente, UsuarioAdmin)
-#admin.site.register(Medico)
-#admin.site.register(Profile)
+
 admin.site.register(Mensaje,ContactoAdmin)

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import environ
+import os
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -62,7 +63,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 SILENCED_SYSTEM_CHECKS = ['security.W019']
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
-AUTH_USER_MODEL = 'Users.Usuario'
+
 
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS':  [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -147,11 +148,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-import os
+
 STATIC_URL = '/static/' # the path in url
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    ('Web', os.path.join(BASE_DIR, 'WebApp', 'static')),
+    ('Users', os.path.join(BASE_DIR, 'Users', 'static')),
+
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

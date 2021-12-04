@@ -20,11 +20,13 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('WebApp.urls')),
-    path('usuarios/', include(('Users.urls','usuarios'))),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include(('WebApp.urls'),namespace='Web')),
+    path('', include(('Users.urls'), namespace='AppUsers')),
+    
+
 ]
 
 if settings.DEBUG:

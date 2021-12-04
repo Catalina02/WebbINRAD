@@ -1,7 +1,8 @@
-from django.urls import path
+from django.urls import path,include
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import views as auth_views
+app_name='AppUsers'
 
-from Users.views import RegistrarUsuario
 urlpatterns = [
-    path('registrar_usuario/', login_required(RegistrarUsuario.as_view(),name='registrar_usuario'))
+  path('login/', auth_views.LoginView.as_view(), name='login'),
 ]

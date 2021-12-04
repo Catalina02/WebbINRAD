@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>INRAD – Iniciar Sesión</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        {% load static %}
+        <link rel="stylesheet" type='text/css' href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/HojaEstilos.css' %}">
+        <title>Ingresar</title>
+    </head>
+    <style>
+
+       .link{
+         color:var(--darkgreen);
+         text-decoration: none;
+        }
+        .link:hover, .link:focus, .link:active {
+            text-decoration: none;
+            color:var(--darkgreen);
+        }
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #6a11cb;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, var(--darkgreen), var(--light));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, var(--darkgreen),var(--light))
+        }
+    </style>
+    <body>
+        
+
+    <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        {%load crispy_forms_tags%}
+        
+        <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-white text-dark" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+
+                <div class="mb-md-3 mt-md-4 pb-3">
+                    <img src="{% static 'Web/img/logotipo.png' %}" class="img-fluid"></img>
+                    <h2 class="infotitulo fw-bold mb-5 text-uppercase" style="font-size: 30px;">Inicio de Sesion</h2>
+                    <form action="" method='post'>
+                        {%csrf_token%}
+                        {{form|crispy}}
+                                            
+                        <input type="submit" value='Ingresar' class='btn button  justify-content-center boton_formulario mx-auto'>
+                    </form>
+                    
+            </div>
+            
+            <div>
+                    <p class="small mb-5 pb-lg-2"><a class="link" href="/">Olvido su Contraseña?</a></p>
+                <p class="mb-0">No tiene una Cuenta? <a href="#!" class="link">Registrese Aqui!</a></p>
+                </div>
+
+            </div>
+            </div>
+        </div>
+        </div>
+  
+    </div>
+    </section>
+    </body>
+</html>
