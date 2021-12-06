@@ -96,7 +96,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
+AUTH_USER_MODEL = 'Users.Usuario'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
