@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        {% load static %}
         <title>INRAD – Radioterapia</title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'img\logotipo.png' %}"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        {% load static %}
         <link rel="stylesheet" type='text/css' href="{% static 'css/bootstrap.css' %}">
         <link rel="stylesheet" href="{% static 'css/HojaEstilos.css' %}">
         <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
@@ -120,7 +121,7 @@
                         <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                         </svg></a>
                 </div>
-                <a class="button pulse" href="{% url 'Web:home' %}" >
+                <a class="button pulse" href="{% url 'admin:index' %}" >
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bandaid-fill" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="m2.68 7.676 6.49-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Zm5.71-2.858a.5.5 0 1 1-.708.707.5.5 0 0 1 .707-.707ZM6.974 6.939a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707ZM5.56 8.354a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708Zm2.828 2.828a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707Zm1.414-2.121a.5.5 0 1 1-.707.707.5.5 0 0 1 .707-.707Zm1.414-.707a.5.5 0 1 0-.706-.708.5.5 0 0 0 .707.708Zm-4.242.707a.5.5 0 1 1-.707.707.5.5 0 0 1 .707-.707Zm1.414-.707a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708Zm1.414-2.122a.5.5 0 1 1-.707.707.5.5 0 0 1 .707-.707ZM8.646 3.354l4 4 .708-.708-4-4-.708.708Zm-1.292 9.292-4-4-.708.708 4 4 .708-.708Z"/>
                       </svg>

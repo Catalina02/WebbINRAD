@@ -29,19 +29,19 @@ class UserCreationForm(forms.ModelForm):
 class CustomUserAdmin(ImportExportModelAdmin,UserAdmin):
     # The forms to add and change user instances
     add_form = UserCreationForm
-    list_display = ("rut",)
+    list_display = ('rut','dv','nombre','apellido_paterno','apellido_materno','email','telefono_contacto','prevision')
     ordering = ("rut",)
 
     fieldsets = (
-        (None, {'fields': (('rut','dv','password','nombre','apellido_paterno','apellido_materno','email','telefono_contacto','telefono_contacto_2','prevision','fecha_nacimiento','domicilio','type'))}),
+        (None, {'fields': (('rut','dv','password','nombre','apellido_paterno','apellido_materno','email','telefono_contacto','telefono_contacto_2','prevision','fecha_nacimiento','domicilio','type','foto_perfil'))}),
         )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('rut','dv','password','nombre','apellido_paterno','apellido_materno','email','telefono_contacto','telefono_contacto_2','prevision','fecha_nacimiento','domicilio','type')}
+            'fields': ('rut','dv','password','nombre','apellido_paterno','apellido_materno','email','telefono_contacto','telefono_contacto_2','prevision','fecha_nacimiento','domicilio')}
             ),
         )
-    list_filter=[]
+    list_filter=['prevision','date_joined']
     filter_horizontal = ()
 
 

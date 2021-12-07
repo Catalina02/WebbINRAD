@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        {% load static %}
         <title>INRAD – Registro</title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'Web/img\logotipo.png' %}"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        {% load static %}
         <link rel="stylesheet" type='text/css' href="{% static 'css/bootstrap.css' %}">
         <link rel="stylesheet" href="{% static 'css/HojaEstilos.css' %}">
         <title>Ingresar</title>
-    </head>
+    </head>  
     <style>
 
        .link{
@@ -24,9 +25,14 @@
             /* fallback for old browsers */
             background: var(--darkgreen);
             /* Chrome 10-25, Safari 5.1-6 */
-            background: -webkit-linear-gradient(to right, var(--darkgreen), var(--light));
+            background: -webkit-linear-gradient(to right, var(--primary), var(--light));
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background: linear-gradient(to right, var(--darkgreen),var(--light))
+            background: linear-gradient(to right, var(--primary),var(--light))
+        }
+        .form{
+            text-align: left;
+            font-family:'Roboto';
+            padding-bottom: 20px;
         }
     </style>
     <body>
@@ -46,7 +52,7 @@
                    
                     <h2 class="infotitulo fw-bold  text-uppercase" style="font-size: 30px;">Registrarse</h2>
                     <h1 class=" fw-bold text-uppercase" style="font-size: 30px;padding-bottom: 20px;padding-top: 0px;">Paciente</h1>
-                    <form action="" method='post'>
+                    <form action="" method='post' class="form">
                         {%csrf_token%}
                         {{form|crispy}}
                                             
