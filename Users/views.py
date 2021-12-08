@@ -4,8 +4,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from datetime import datetime
 import sweetify
-
-
+from django.contrib.auth import logout
+from WebApp.views import home
+from .models import Usuario,Paciente
 def registro(request):
     data={
         'form':CustomUserCreationForm()
@@ -22,3 +23,17 @@ def registro(request):
         data['form']=formulario
 
     return render(request, 'registration/registro.html',data)
+
+     
+def profile(request):
+    pacientes=Usuario.objects.all()
+    data={
+        'pacientes':pacientes
+    }
+    return render(request,'profile.html',data)
+
+
+def logoutView(request):
+    logout(request)
+    sweetify.success(request, 'Sesión Cerrada Correctamente',icon='success')
+    return redirect('Web:home')

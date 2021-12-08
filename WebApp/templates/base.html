@@ -15,36 +15,87 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
                 
     </head>
-
+<style>
+    @media only screen and (min-width: 769px)
+    {
+        .paciente{
+        text-align: right;}
+        
+    }
+    @media only screen and (max-width: 380px)
+    {
+        .paciente{
+        text-align: center;}
+    }
+</style>
 <body>
 <!--*************EMPIEZA EL CONTENIDO*************-->
+{%block js%}
 
+    <script>
+        function cerrarsesion(){
+            Swal.fire({
+            'title': 'Cerrar Sesión',
+            'text': '¿Estas Seguro?',
+            'icon': 'warning',
+            'showCancelButton': true,
+            'confirmButtonColor': '#16a89f',
+            'cancelButtonColor': '#8f0c1f',
+            'confirmButtonText': 'Si',
+            'cancelButtonText':'No',
+            'reverseButtons':false,
+            }).then(function(result){
+            if (result.isConfirmed) {
+                window.location.href = '/logout/'
+                }
+            })
+        }
+        
+    </script>
+{%endblock%}
 <header>
     <div class="greenHeader container-fluid">
         <div class="row">
             
-        <div class="col-12 col-md-5">
-            <a href="tel:+56222264771" class="button pulse">
+        <div class="col-12  col-md-4">
+            <a href="tel:+56222264771" class="button pulse headerbutton inicio-button mx-auto justify-content-center" style="width:250px;padding: 0px;margin: 5px; ">
                 <img src=" {% static 'img/fono2.png' %}" style="height: 30px;width: 30px;">
                 <strong style='padding-left: 5px;'>2 2226 4771</strong>
             </a>
         </div>
-        <div class="col-2  col-md-2">
-        </div>
-        <div class="col-12 col-md-5">    
-            
-            
-            <a class="button pulse" href="{% url 'AppUsers:login' %}" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468                               2.37A7 7 0 0 0 8 1z"></path>
-                </svg>
-                <strong style='padding-left: 5px;'>Portal Paciente</strong>
-            </a>
-
-            
-        </div>
-        
+        {% if user.is_authenticated %}
+            <div class="col-2 col-sm-12 col-md-1 ">
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 paciente" >    
+                <a class="inicio-button button pulse headerbutton mx-auto justify-content-center " style="width:250px;padding: 0px;margin: 5px;" href="{% url 'AppUsers:profile' %}" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468                               2.37A7 7 0 0 0 8 1z"></path>
+                    </svg>
+                    <strong style='padding-left: 5px;'>Portal Paciente</strong>
+                </a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-2">    
+                <a class="inicio-button headerbutton button cancel_button  mx-auto justify-content-center" style="width:250px;padding: 0px;margin: 5px;" href="#" onclick="cerrarsesion()" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+                        <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+                    </svg>
+                    <strong style='padding-left: 5px;'>Cerrar Sesion</strong>
+                </a>
+            </div>
+            {%else%}
+            <div class="col-2 col-md-1">
+            </div>
+            <div class="col-12 col-md-7 paciente">    
+                <a class="button pulse" style="margin-right: 70px;" href="{% url 'AppUsers:login' %}" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468                               2.37A7 7 0 0 0 8 1z"></path>
+                    </svg>
+                    <strong style='padding-left: 5px;'>Portal Paciente</strong>
+                </a>
+            </div>
+            {%endif%}
         </div>
     </div>
 

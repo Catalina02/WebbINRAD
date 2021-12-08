@@ -67,7 +67,7 @@
         padding: 10px;
         font-size: 35px;
         font-weight: 600;
-        font-family:'Roboto';
+        font-family:'Roboto', sans-serif;
         color:var(--darkgrey);
     }
     .Footer{
@@ -251,7 +251,7 @@ hr.accessory {
 }
 /*segundalinea overlay*/
 .inicio-titlebody {
-	font-family: 'Roboto';
+	font-family: 'Roboto', sans-serif;
 	margin-bottom: 30px;
     font-size: 40px;
 }
@@ -262,7 +262,7 @@ hr.accessory {
 .item-inicio-texto{
     font-size: 35px;
     font-weight: 600;
-    font-family:'Roboto';
+    font-family:'Roboto', sans-serif;
     color: var(--darkgrey);
     padding: 5px;
 }
@@ -270,11 +270,11 @@ hr.accessory {
 .infotitulo{
     font-weight: 600;
     font-size: 20px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     color: var(--darkgreen);
 }
 .titleitem{
-    font-family: 'Roboto', cursive;
+    font-family: 'Roboto', sans-serif, cursive;
 	font-size: 25px;
     text-align: center;
     font-weight: 900;
@@ -282,7 +282,7 @@ hr.accessory {
 }
 
 .titlebody {
-    font-family: 'Roboto', cursive;
+    font-family: 'Roboto', sans-serif, cursive;
 	font-size: 50px;
 	margin-bottom: 30px;
     text-align: center;
@@ -302,7 +302,7 @@ hr.accessory {
     color: var(--grey);
 }
 .textitem{
-    font-family: 'Roboto', cursive;
+    font-family: 'Roboto', sans-serif, cursive;
 	font-size: 20px;
     text-align: center;
     font-weight: 500;
@@ -392,20 +392,31 @@ iframe{
       }
     /******GENRAL CONTENT*******/
     .inicio-title{
-        font-family: 'Roboto', cursive;
+        font-family: 'Roboto', sans-serif, cursive;
         font-size: 50px;
         text-align: center;
         margin-bottom: 30px;
+    }
+    .headerbutton{
+        width: 220px;
+        margin: 5px;
+        padding:0px;
     }
 }
 
 @media only screen and (max-width: 380px){
     .inicio-title{
-    font-family: 'Roboto', cursive;
+    font-family: 'Roboto', sans-serif, cursive;
 	font-size: 40px;
     text-align: center;
 	margin-bottom: 30px;
     }
+    .headerbutton{
+        width: 220px;
+        margin: 5px;
+        padding:0px;
+    }
+    
 }
 
 
