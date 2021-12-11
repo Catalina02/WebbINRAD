@@ -26,11 +26,7 @@ def registro(request):
 
      
 def profile(request):
-    pacientes=Usuario.objects.all()
-    data={
-        'pacientes':pacientes
-    }
-    return render(request,'profile.html',data)
+    return render(request,'profile.html')
 
 
 def logoutView(request):
