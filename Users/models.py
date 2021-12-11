@@ -47,14 +47,21 @@ class Usuario(AbstractUser):
     domicilio=models.CharField('Domicilio',max_length=255,null=False,blank=True)
 
     foto_perfil=models.ImageField('Foto de Perfil',upload_to='Usuarios/',null=True,default='blank-profile-picture-973460_640.png',blank=True)
-    
+    opciones_sexo=[
+            ('mujer','Mujer'),
+            ('hombre','Hombre'),
+            ('ninguno','Prefiero no Responder'),
+        ]
+
+    sexo=models.CharField(choices=opciones_sexo,max_length = 25,default='ninguno')
     #django flieds
     username=None
     first_name=None
     last_name=None
-    groups=None
-    user_permissions=None
+
     date_joined=models.DateField('Fecha Ingreso al Sistema',null=True,blank=True)
+
+ 
 
     #definir tipos
     class Types(models.TextChoices):
@@ -73,13 +80,26 @@ class Usuario(AbstractUser):
 
 
 #CLASE DE PACIENTE
+class InformacionMedica(models.Model):
+    user = models.OneToOneField(Usuario, on_delete = models.CASCADE)
+    diagnostico=models.CharField('Diagnostico',max_length=255,null=True,blank=True)
+    medico_derivante=models.CharField('Medico Derivante',max_length=255,null=True,blank=True)
+    institucion_derivante=models.CharField('Intitucion Derivante',max_length=255,null=True,blank=True)
+    medico_INRAD=models.CharField('Medico INRAD',max_length=255,null=True,blank=True)
+    anamnesis=models.TextField('Anamnesis',max_length=255,null=True,blank=True)
+    paciente_paliativo=models.BooleanField('Paciente Paliativo',null=True,blank=True)
 class PacienteManager(BaseUserManager):
     def get_queryset(self,*args,**kwargs): 
         return super().get_queryset(*args,*kwargs).filter(type=Usuario.Types.Paciente)
 class Paciente(Usuario):
+    base_type = Usuario.Types.Paciente
     objects=PacienteManager()
     class Meta:
         proxy=True
+    @property
+    def showAdditional(self):
+        return self.informacionmedica
+
 
 #CLASE MEDICO
 class MedicoManager(BaseUserManager):

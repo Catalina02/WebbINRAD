@@ -42,7 +42,7 @@
     .LogoHeader{
         background:var(--softwhite);
         color: var(--grey);
-        box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1) inset;
+        box-shadow: 0 4px 4px 4px rgba(0,0,0,0.1) inset;
         text-decoration: none;
         color: currentColor;
         text-align: center;
@@ -68,6 +68,7 @@
         font-size: 35px;
         font-weight: 600;
         font-family:'Roboto', sans-serif;
+        box-shadow: 10px 2px 5px 5px rgba(0, 0, 0, 0.2);
         color:var(--darkgrey);
     }
     .Footer{
@@ -114,7 +115,9 @@
         margin: 30px;
     }
 
-   
+   header{
+    box-shadow: 10px 2px 5px 5px rgba(0, 0, 0, 0.2);
+   }
 /*******************MAIN BUTTONS SETTINGS*************************/
 .button {
     display: inline-flex;

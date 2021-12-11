@@ -34,5 +34,5 @@ class CustomUserCreationForm(UserCreationForm):
         return self.cleaned_data
     class Meta:
         model=Usuario
-        fields=['rut','dv','nombre','apellido_paterno','apellido_materno','email','telefono_contacto','password1','password2']
+        fields=['rut','dv','nombre','apellido_paterno','apellido_materno','sexo','email','telefono_contacto','password1','password2']
         
